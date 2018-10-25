@@ -24,3 +24,19 @@
 <% end %>
 
 </p>
+
+<h3>All comments:</h3>
+
+<% @article.comments.each do |comment| %>
+
+	<h4>
+		<%= comment.author %>
+	</h4>
+
+	<p>
+		<%= comment.body %>
+	</p>
+
+	<br>
+
+<% end %>
