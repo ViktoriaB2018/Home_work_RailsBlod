@@ -1,7 +1,24 @@
 <h1><%= @article.title %></h1>
 <p>
 	<%= @article.text %>
+	<p style="font-size: 12px;">Created at: <%= @article.created_at %></p>
 </p>
+
+<h3>All comments:</h3>
+
+<% @article.comments.each do |comment| %>
+
+	<h4>
+		<i><%= comment.author %> said:</i>
+	</h4>
+
+	<p>
+		<i><%= comment.body %></i>
+	</p>
+
+<% end %>
+
+<h4>Add comment:</h4>
 
 <p>
 	<%= form_for([@article, @article.comments.build]) do |f| %>
@@ -24,19 +41,3 @@
 <% end %>
 
 </p>
-
-<h3>All comments:</h3>
-
-<% @article.comments.each do |comment| %>
-
-	<h4>
-		<%= comment.author %>
-	</h4>
-
-	<p>
-		<%= comment.body %>
-	</p>
-
-	<br>
-
-<% end %>
