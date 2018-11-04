@@ -4,13 +4,13 @@
 	<p style="font-size: 12px;">Created at: <%= @article.created_at %></p>
 </p>
 
-<h3>All comments:</h3>
+<h4>All comments:</h4>
 
 <% @article.comments.each do |comment| %>
 
-	<h4>
+	<h6>
 		<i><%= comment.author %> said:</i>
-	</h4>
+	</h6>
 
 	<p>
 		<i><%= comment.body %></i>
