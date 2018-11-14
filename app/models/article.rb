@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
-	validates :title, presence: true, length: { in: 6..100 }
-	validates :text, presence: true, length: { in: 10..4000 }
+	validates :title, presence: true
+	validates :text, presence: true
+	validates_length_of :title, in: 6..100
+	validates_length_of :text, in: 10..4000
 	has_many :comments
 
 	def subject
