@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
-	validates :body, presence: true, length: { in: 5..4000 }
+	validates :body, presence: true
+	validates_length_of :body, in: 5..4000
+	
   belongs_to :article
 end
