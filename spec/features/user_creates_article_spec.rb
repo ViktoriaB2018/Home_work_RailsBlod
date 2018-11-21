@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'support/database_cleaner'
 
 feature 'Article Creation' do
   before (:all) do
